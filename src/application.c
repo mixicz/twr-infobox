@@ -4,6 +4,9 @@
 
 #include <application.h>
 
+// Pointer to GFX instance
+twr_gfx_t *pgfx;
+
 // LED instance
 twr_led_t led;
 
@@ -65,10 +68,18 @@ void application_init(void)
     twr_tmp112_set_event_handler(&tmp112, tmp112_event_handler, NULL);
     twr_tmp112_set_update_interval(&tmp112, 10000);
 
+    // LCD Module
+    twr_module_lcd_init();
+    pgfx = twr_module_lcd_get_gfx();
+
+    twr_gfx_set_font(pgfx, &twr_font_ubuntu_13);
+    twr_gfx_draw_string(pgfx, 50, 50, "Hello world", true);
+    twr_gfx_update(pgfx);
+
     // Initialize radio
     twr_radio_init(TWR_RADIO_MODE_NODE_SLEEPING);
     // Send radio pairing request
-    twr_radio_pairing_request("skeleton", FW_VERSION);
+    // twr_radio_pairing_request("infobox", FW_VERSION);
 }
 
 // Application task function (optional) which is called peridically if scheduled

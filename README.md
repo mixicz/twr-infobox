@@ -1,26 +1,62 @@
-<a href="https://www.hardwario.com/"><img src="https://www.hardwario.com/ci/assets/hw-logo.svg" width="200" alt="HARDWARIO Logo" align="right"></a>
+# Hardwario Tower infobox
 
-# Firmware Skeleton for HARDWARIO TOWER Core Module
+Firmware for information box built on Hardwario Tower platform with core and LCD modules.
 
-[![Travis](https://travis-ci.org/hardwario/twr-skeleton.svg?branch=master)](https://travis-ci.org/hardwario/twr-skeleton)
-[![Release](https://img.shields.io/github/release/hardwario/twr-skeleton.svg)](https://github.com/hardwario/twr-skeleton/releases)
-[![License](https://img.shields.io/github/license/hardwario/twr-skeleton.svg)](https://github.com/hardwario/twr-skeleton/blob/master/LICENSE)
-[![Twitter](https://img.shields.io/twitter/follow/hardwario_en.svg?style=social&label=Follow)](https://twitter.com/hardwario_en)
+It uses protobuf encoded data split to multiple base64 encoded chunks to receive data to display. It can work in online mode (always listening with enabled radio) or offline mode (requesting data in periodic intervals for battery powered operation).
 
-This repository contains firmware skeleton for [Core Module](https://shop.hardwario.com/core-module).
+This firmware supports following info screens:
+* TODO customizable dashboard,
+* TODO meteorological data (temperatures, humidity, pressure),
+* TODO photo-voltaics current stats,
+* TODO photo-voltaics daily cumulative stats,
 
-If you want to get more information about Core Module, firmware and how to work with it, please follow this link:
+## Controls
 
-**https://tower.hardwario.com/en/latest/firmware/basic-overview**
+* left button:
+    * short press - switch to next screen / menu item,
+    * long press - auto rotate screens / exit menu,
 
-User's application code (business logic) goes into `src/application.c`.
-The default content works as a *Hello World* example.
-When flashed into Core Module, it toggles LED state with each button press.
+* right button:
+    * short press - switch to previous screen / confirm current selection,
+    * long press - lock current screen / go back one level in menu,
 
-## License
+* both buttons:
+    * short press - enter menu / exit menu,
+    * long press - reset device,
+
+# Communication
+
+## Emmited events
+### temperature
+TODO
+
+### battery voltage
+TODO
+
+### capabilites
+TODO
+
+### data request
+TODO
+
+## Accepted data
+### time (TIM)
+TODO
+
+### meteorological data (MET)
+TODO
+
+### photo-voltaics current stats (PVC)
+TODO
+
+### photo-voltaics daily cumulative stats (PVD)
+TODO
+
+# Development
+
+## Screen definition
+In initial version, static compiled-in screens are used. Each screen is drawn by a function
+
+# License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT/) - see the [LICENSE](LICENSE) file for details.
-
----
-
-Made with &#x2764;&nbsp; by [**HARDWARIO a.s.**](https://www.hardwario.com/) in the heart of Europe.
