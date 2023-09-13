@@ -90,6 +90,7 @@ This firmware supports following info screens:
 
 ### Photo-voltaics daily cumulative stats
 * today's generated energy
+* maximum power
 * today's sold energy
 * TODO
 

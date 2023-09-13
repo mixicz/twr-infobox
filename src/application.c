@@ -42,8 +42,10 @@ const twr_font_t *font_time = &twr_font_ubuntu_13;
 const uint8_t render_time_height = 13;
 uint16_t render_time_width = 0;
 
+void render_screen(int screen, bool redraw);
 void render_info_screen_dashboard(bool redraw, void *param);
 void render_info_screen_device(bool redraw, void *param);
+
 info_screen_t screens[] = {
     {icon24_dashboard, "Prehled", render_info_screen_dashboard, NULL},
     {icon24_thermometer_sun, "Meteo", NULL, NULL},
